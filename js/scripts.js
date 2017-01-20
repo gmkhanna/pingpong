@@ -1,13 +1,14 @@
 
 
 var oneToNum = function(integer) {
+  if (integer % 3 === 0) {
   return true;
+  } else {
+  return false;
+  }
 };
 
 
-// for (var i = 0; i <= integer; i = i++) {
-//   console.log("i is", i);
-// }
 
 
 
@@ -17,7 +18,7 @@ $(document).ready(function() {
     event.preventDefault();
     var integer = parseInt($("input#number").val());
     var result = oneToNum(integer);
-    $("#result").append(result);
+    $("#result").text(result);
 
   });
 });
