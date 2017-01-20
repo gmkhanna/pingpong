@@ -1,16 +1,26 @@
+
+
+var oneToNum = function(integer) {
+  return true;
+};
+
+
+// for (var i = 0; i <= integer; i = i++) {
+//   console.log("i is", i);
+// }
+
+
+
+
 $(document).ready(function() {
   $("form#pingForm").submit(function(event) {
-  event.preventDefault();
-  var number = parseInt($("input#number").val());
-  var result = oneToNum(number);
-  $("#result").append(result);
+    event.preventDefault();
+    var integer = parseInt($("input#number").val());
+    var result = oneToNum(integer);
+    $("#result").append(result);
 
   });
 });
-
-function oneToNum(number) {
-  return number;
-};
 
 
 // run for loop = = possibly a .map()
