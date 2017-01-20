@@ -1,13 +1,16 @@
 $(document).ready(function() {
-  $("#pingForm").submit(function(event) {
+  $("form#pingForm").submit(function(event) {
   event.preventDefault();
-
-  var integer = pareseInt($("input#number").val());
+  var number = parseInt($("input#number").val());
+  var result = oneToNum(number);
+  $("#result").append(result);
 
   });
 });
 
-
+function oneToNum(number) {
+  return number;
+};
 
 
 // run for loop = = possibly a .map()
