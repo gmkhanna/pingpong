@@ -1,7 +1,8 @@
 
 
+
 var oneToNum = function(integer) {
-  if (integer % 3 === 0) {
+  if ((integer % 3 === 0) || (integer % 5 === 0) || (integer % 15 === 0)) {
   return true;
   } else {
   return false;
