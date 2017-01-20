@@ -2,10 +2,14 @@
 
 
 var oneToNum = function(integer) {
-  if ((integer % 3 === 0) || (integer % 5 === 0) || (integer % 15 === 0)) {
-  return true;
+  if ((integer % 3 === 0) && (integer % 5 === 0)) {
+  return "ping-pong";
+  } else if (integer % 5 === 0) {
+  return "pong";
+  } else if (integer % 3 === 0) {
+  return "ping";
   } else {
-  return false;
+    return integer;
   }
 };
 
