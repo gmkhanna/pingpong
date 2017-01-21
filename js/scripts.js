@@ -1,49 +1,37 @@
 
-
-integer = 0;
-
-
-function convertList() {
-  var integerArray = []
-
-for (var i = 1; i <= integer; i++) {
-  integerArray.push(i);
+var integer = 0;
+function integerArray(start, end) {
+  var arrayWindow = [];
+  for (var i = 1; i <= integer; i++) {
+    arrayWindow.push(i);
+  }
+  return arrayWindow;
 }
 
-console.log(integerArray);
-}
-
-// for (var i = 0; i <= 5001; i++) {
-//   integerList.push(i);
-// }
-// console.log(integerList[i]);
-
-// var integerDiv = function(integerDiv) {
-//   if ((integerDiv % 3 === 0) && (integerDiv % 5 === 0)) {
-//   return "ping-pong";
-// } else if (integerDiv % 5 === 0) {
-//   return "pong";
-// } else if (integerDiv % 3 === 0) {
-//   return "ping";
-// } else if ((integerDiv < 0) || (integerDiv > 5001)) {
-//     return "Come on now... Don't you think I gave you a good range to play with?";
-//   } else {
-//     return integerDiv
-//   }
-// };
-
+integerArray.forEach(function() {
+  function integerDiv(originalNum) {
+    if ((originalNum % 3 === 0) && (originalNum % 5 === 0)) {
+      return "ping-pong";
+    } else if (originalNum % 5 === 0) {
+      return "pong";
+    } else if (originalNum % 3 === 0) {
+      return "ping";
+    } else if ((originalNum < 0) || (originalNum > 5001)) {
+      return "Come on now... Don't you think I gave you a good range to play with?";
+    }
+    else {
+      return originalNum
+    }
+  }
+});
 $(document).ready(function() {
   $("form#pingForm").submit(function(event) {
     event.preventDefault();
     var integer = parseInt($("input#number").val());
-    // var result = integerDiv(integer);
-
-    var result = integerArray(integer);
-    $("#result").text(result);
-
+    var input = $("input#number").val();
+    $("integerArray").text("#result");
   });
 });
-
 
 // run for loop = = possibly a .map()
 
@@ -52,12 +40,3 @@ $(document).ready(function() {
 // simplest may be counting up to integer - or from integer down to 1
 
 // You will be using "%"  i.e. 3 % === 0 && 5 % === 0; //
-
-// function factor(n) {
-//   factor = 0
-//
-//   for (i = 1; i <= n; i++) {
-//     n = n + i;
-//   }
-//   return factor;
-// }
