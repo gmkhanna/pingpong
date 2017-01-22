@@ -1,6 +1,6 @@
 
 var integer = 0;
-function integerArray(start, end) {
+function integerArray() {
   var arrayWindow = [];
   for (var i = 1; i <= integer; i++) {
     arrayWindow.push(i);
@@ -8,28 +8,36 @@ function integerArray(start, end) {
   return arrayWindow;
 }
 
-integerArray.forEach(function() {
-  function integerDiv(originalNum) {
-    if ((originalNum % 3 === 0) && (originalNum % 5 === 0)) {
-      return "ping-pong";
-    } else if (originalNum % 5 === 0) {
-      return "pong";
-    } else if (originalNum % 3 === 0) {
-      return "ping";
-    } else if ((originalNum < 0) || (originalNum > 5001)) {
-      return "Come on now... Don't you think I gave you a good range to play with?";
-    }
-    else {
-      return originalNum
-    }
+function integerDiv(originalNum) {
+  if ((originalNum % 3 === 0) && (originalNum % 5 === 0)) {
+    return "Ping-Pong";
+  } else if (originalNum % 5 === 0) {
+    return "Pong";
+  } else if (originalNum % 3 === 0) {
+    return "Ping";
+  } else if ((originalNum < 0) || (originalNum > 5001)) {
+    return "Come on now... Don't you think I gave you a good range to play with?";
   }
-});
+  else {
+    return originalNum
+  }
+}
+
+function pinging() {
+  var pingingArray = integerArray();
+  for (var i = 0; i <= integer - 1; i++) {
+    pingingArray[i] = integerDiv(pingingArray[i]);
+  }
+  return pingingArray;
+}
+
+
 $(document).ready(function() {
   $("form#pingForm").submit(function(event) {
     event.preventDefault();
-    var integer = parseInt($("input#number").val());
-    var input = $("input#number").val();
-    $("integerArray").text("#result");
+    integer = parseInt($("input#number").val());
+    $("#result").text(pinging());
+    // var input = $("input#number").val();
   });
 });
 
